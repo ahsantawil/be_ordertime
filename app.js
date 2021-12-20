@@ -12,6 +12,7 @@ const picRouter = require('./app/pic/router');
 const provinceRouter = require('./app/province/router');
 const regionRouter = require('./app/region/router');
 const categoryRouter = require('./app/category/router');
+const usersRouter = require('./app/users/router');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/pic', picRouter);
 app.use('/province', provinceRouter);
 app.use('/region', regionRouter);
 app.use('/category', categoryRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
