@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">
+        <a href="/province/add" class="btn btn-primary"><i class="nav-icon far fa-plus-square"></i></a>
+      </h3>
+    </div>
+
+    <div class="card-body">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>No.</th>
+          <th>Province</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for( let i=0; i < province.length; i++) { %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= province[i].nameProvince %></td>
+              <td>
+                <form action="/province/delete/<%= province[i]._id %>?_method=DELETE" method="post">
+                    <a href="/province/edit/<%= province[i]._id %>" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i></a>
+                    <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+
+</div>
